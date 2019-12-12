@@ -5,11 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController {
+public class CRUDYachtController {
 
-    @RequestMapping("/")
-    public String home() {
-        return "index";
+    @RequestMapping("/charterAdminPanel")
+    @ResponseBody
+    public String secured() {
+        return "charterAdminPanel";
     }
+
 
 }
