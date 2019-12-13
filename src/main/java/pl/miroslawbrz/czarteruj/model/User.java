@@ -24,6 +24,4 @@ public class User{
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<UserRole> roles = new HashSet<>();
 
-
-
 }
