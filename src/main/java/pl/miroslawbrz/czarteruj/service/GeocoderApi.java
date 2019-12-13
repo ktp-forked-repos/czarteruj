@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class GocoderApi {
+public class GeocoderApi {
 
     public String apiResponse(String request){
 
@@ -37,11 +37,9 @@ public class GocoderApi {
     }
 
 
-    public String prepareRequest(CharterPlace charterPlace){
+    public String prepareRequest(Address address){
         String url = ApiUrl.GEO_CODER_URL;
         String apiKey = ApiUrl.GEO_CODER_API_KEY;
-
-        Address address = charterPlace.getAddress();
 
         StringBuilder sb = new StringBuilder();
         sb.append(url).append(apiKey);

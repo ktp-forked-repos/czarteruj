@@ -22,5 +22,11 @@ public class Address {
     private String PostalCode;
     private final String country = "Poland";
 
+    public Address(String city, String street, String buildingNumber) {
+        City = city;
+        Street = street;
+        BuildingNumber = buildingNumber;
+    }
 
+    public Address(){}
 }
