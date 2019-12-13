@@ -15,6 +15,8 @@ public class CharterPlace {
     private Long id;
     private String charterPlaceName;
     private String webSiteUrl;
+    private double mapLatitude;
+    private double mapLongitude;
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Address address;
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
