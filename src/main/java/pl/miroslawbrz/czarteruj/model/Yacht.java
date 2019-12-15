@@ -14,10 +14,10 @@ public class Yacht {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String yachtModel;
-    private int maxCapacity;
-    private double pricePerDay;
-    private double sailSize;
-    private int enginePowerInHorsePower;
+    private Integer maxCapacity;
+    private Double pricePerDay;
+    private Double sailSize;
+    private Integer enginePowerInHorsePower;
     private String description;
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<YachtPerk> yachtPerks;

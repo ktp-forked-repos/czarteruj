@@ -1,10 +1,15 @@
 package pl.miroslawbrz.czarteruj.service;
 
-import org.springframework.stereotype.Service;
+import pl.miroslawbrz.czarteruj.model.Yacht;
 
-@Service
-public class YachtService {
+import java.util.List;
+
+public interface YachtService {
+
+    void addYacht(Yacht yacht);
+    void removeYacht(int id);
+    Yacht getYacht(int id);
+    List<Yacht> getYachts();
+    }
 
 
-
-}
