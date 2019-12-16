@@ -1,8 +1,8 @@
 package pl.miroslawbrz.czarteruj.service;
 
+import org.springframework.stereotype.Component;
 import pl.miroslawbrz.czarteruj.constans.ApiUrl;
 import pl.miroslawbrz.czarteruj.model.Address;
-import pl.miroslawbrz.czarteruj.model.CharterPlace;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class GeocoderApi {
+
+public class GeoCoderApi{
+
 
     public String apiResponse(String request){
 
@@ -35,7 +37,6 @@ public class GeocoderApi {
 
         return response;
     }
-
 
     public String prepareRequest(Address address){
         String url = ApiUrl.GEO_CODER_URL;

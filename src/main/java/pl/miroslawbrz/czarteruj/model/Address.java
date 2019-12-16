@@ -18,7 +18,6 @@ public class Address {
     private String City;
     private String Street;
     private String BuildingNumber;
-    private String LocalNumber;
     private String PostalCode;
     private final String country = "Poland";
 
