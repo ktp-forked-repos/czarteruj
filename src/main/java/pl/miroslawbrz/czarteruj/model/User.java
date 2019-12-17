@@ -17,6 +17,7 @@ public class User{
     private Long id;
     private String firstName;
     private String lastName;
+    private boolean active;
     @NotEmpty
     private String email;
     @NotEmpty

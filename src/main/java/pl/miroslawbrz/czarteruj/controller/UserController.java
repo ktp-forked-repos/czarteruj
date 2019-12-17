@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.miroslawbrz.czarteruj.model.User;
 import pl.miroslawbrz.czarteruj.service.UserService;
+import pl.miroslawbrz.czarteruj.utils.Mail;
 import pl.miroslawbrz.czarteruj.validators.RegisterValidator;
 
 @Controller
@@ -42,6 +43,8 @@ public class UserController {
         else {
 
             userService.addWithDefaultRole(user);
+            Mail mail = new Mail();
+            mail.sendEmail(user);
             return "registerSuccess";
         }
     }
