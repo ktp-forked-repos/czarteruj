@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.miroslawbrz.czarteruj.model.User;
 import pl.miroslawbrz.czarteruj.service.UserService;
@@ -41,12 +42,19 @@ public class UserController {
         if(bindingResult.hasErrors())
             return "registerForm";
         else {
-
             userService.addWithDefaultRole(user);
             Mail mail = new Mail();
+            user.setHash(user.hashCode());
             mail.sendEmail(user);
             return "registerSuccess";
         }
+    }
+
+    @GetMapping("/activateUser/{hash}")
+    public String activateUser(@PathVariable int hash){
+        User user = userService.findUserByHash(hash);
+        user.setActive(true);
+        return "index";
     }
 
 }

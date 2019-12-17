@@ -37,13 +37,17 @@ public class Mail{
                     InternetAddress.parse(user.getEmail())
             );
             message.setSubject(messageTitle);
-            message.setText("To jest wiadowomość z linkiem aktywacyjmym ale linku jeszcze nie ma");
+            message.setText("Poniżej znajduje się link aktywacyjny - kliknij na niego aby dokończyć rejestrację \n" + prepareActivationLink(user));
 
             Transport.send(message);
 
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+    }
+
+    private String prepareActivationLink(User user){
+        return "localhost:8080/activateuser/" + user.getHash();
     }
 
 

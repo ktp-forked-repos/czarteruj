@@ -18,11 +18,13 @@ public class User{
     private String firstName;
     private String lastName;
     private boolean active;
+    private int hash;
     @NotEmpty
     private String email;
     @NotEmpty
     private String password;
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<UserRole> roles = new HashSet<>();
+
 
 }

@@ -36,6 +36,10 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User findUserByHash(int hash){
+        return userRepository.findByHash(hash);
+    }
+
     public void addWithDefaultRole(User user) {
         UserRole defaultRole = roleRepository.findByRole(DEFAULT_ROLE);
         user.getRoles().add(defaultRole);
@@ -43,5 +47,6 @@ public class UserService {
         user.setPassword(passwordHash);
         userRepository.save(user);
     }
+
 }
 
