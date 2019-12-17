@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.miroslawbrz.czarteruj.model.User;
 import pl.miroslawbrz.czarteruj.service.UserService;
+import pl.miroslawbrz.czarteruj.validators.RegisterValidator;
 
 @Controller
 public class UserController {
@@ -28,11 +29,18 @@ public class UserController {
         return "registerForm";
     }
 
-    @PostMapping("/register")
-    public String addUser(@ModelAttribute @Valid User user, BindingResult bindResult) {
-        if(bindResult.hasErrors())
+    @PostMapping("/addUser")
+    public String addUser(User user, BindingResult bindingResult, Model model) {
+
+        User userExist = userService.findUserByEmail(user.getEmail());
+
+        new RegisterValidator().validateEmailExist(userExist, bindingResult);
+        new RegisterValidator().validate(user, bindingResult);
+
+        if(bindingResult.hasErrors())
             return "registerForm";
         else {
+
             userService.addWithDefaultRole(user);
             return "registerSuccess";
         }

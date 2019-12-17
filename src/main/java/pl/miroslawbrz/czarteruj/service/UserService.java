@@ -31,6 +31,11 @@ public class UserService {
         this.roleRepository = roleRepository;
     }
 
+
+    public User findUserByEmail(String email){
+        return userRepository.findByEmail(email);
+    }
+
     public void addWithDefaultRole(User user) {
         UserRole defaultRole = roleRepository.findByRole(DEFAULT_ROLE);
         user.getRoles().add(defaultRole);

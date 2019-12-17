@@ -16,27 +16,27 @@ public class RegisterValidator implements Validator {
     public void validate(Object o, Errors errors) {
         User user = (User) o;
 
-        ValidationUtils.rejectIfEmpty(errors, "firstName", "Imię nie może być puste");
-        ValidationUtils.rejectIfEmpty(errors, "lastName", "Nazwisko nie może być puste");
-        ValidationUtils.rejectIfEmpty(errors, "email", "Email nie może być pusty");
-        ValidationUtils.rejectIfEmpty(errors, "password", "hasło nie może być puste");
+        ValidationUtils.rejectIfEmpty(errors, "firstName", "error.userName.empty");
+        ValidationUtils.rejectIfEmpty(errors, "lastName", "error.userLastName.empty");
+        ValidationUtils.rejectIfEmpty(errors, "email", "error.userEmail.empty");
+        ValidationUtils.rejectIfEmpty(errors, "password", "error.userPassword.empty");
 
         if(user.getEmail()!=null){
             boolean isMatch = UserValidationUtils.checkStringFromInput(RegexForValidator.emailPattern, user.getEmail());
             if(!isMatch){
-                errors.rejectValue("email", "nieprawidłowy adres email");
+                errors.rejectValue("email", "error.userEmailIsNotMatch");
             }
         }
         if(user.getPassword()!=null){
             boolean isMatch = UserValidationUtils.checkStringFromInput(RegexForValidator.passwordPattern, user.getPassword());
             if(!isMatch){
-                errors.rejectValue("password", "nieprawidłowe hasło");
+                errors.rejectValue("password", "error.userPasswordIsNotMatch");
             }
         }
     }
     public void validateEmailExist(User user, Errors errors){
         if(user!=null){
-            errors.rejectValue("email", "Pod podanym adresem email jest już zarejestrowany użytkownik");
+            errors.rejectValue("email", "error.userIsExist");
         }
     }
 }
