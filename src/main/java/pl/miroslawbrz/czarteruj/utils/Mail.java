@@ -47,7 +47,7 @@ public class Mail{
     }
 
     private String prepareActivationLink(User user){
-        return "localhost:8080/activateuser/" + user.getHash();
+        return "http://localhost:8080/activateuser/" + user.getHash();
     }
 
 

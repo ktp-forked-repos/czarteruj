@@ -16,7 +16,7 @@ import pl.miroslawbrz.czarteruj.utils.Mail;
 import pl.miroslawbrz.czarteruj.validators.RegisterValidator;
 
 @Controller
-public class UserController {
+public class UserRegistrationController {
 
     private UserService userService;
 
@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public String addUser(User user, BindingResult bindingResult, Model model) {
+    public String addUser(User user, BindingResult bindingResult) {
 
         User userExist = userService.findUserByEmail(user.getEmail());
 

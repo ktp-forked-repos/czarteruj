@@ -1,10 +1,11 @@
-package pl.miroslawbrz.czarteruj.service;
+package pl.miroslawbrz.czarteruj.utils;
 
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import pl.miroslawbrz.czarteruj.model.Address;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
+import pl.miroslawbrz.czarteruj.utils.GeoCoderApi;
 
 public class JsonParse {
 

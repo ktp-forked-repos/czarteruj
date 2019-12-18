@@ -1,4 +1,4 @@
-package pl.miroslawbrz.czarteruj.service;
+package pl.miroslawbrz.czarteruj.utils;
 
 import org.springframework.stereotype.Component;
 import pl.miroslawbrz.czarteruj.constans.ApiUrl;

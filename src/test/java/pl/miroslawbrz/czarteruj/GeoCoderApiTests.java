@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import pl.miroslawbrz.czarteruj.model.Address;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
 
-import pl.miroslawbrz.czarteruj.service.GeoCoderApi;
-import pl.miroslawbrz.czarteruj.service.JsonParse;
+import pl.miroslawbrz.czarteruj.utils.GeoCoderApi;
+import pl.miroslawbrz.czarteruj.utils.JsonParse;
 
 
 import java.io.IOException;

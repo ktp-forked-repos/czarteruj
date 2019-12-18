@@ -25,6 +25,9 @@ public class User{
     private String password;
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<UserRole> roles = new HashSet<>();
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private Set<CharterPlace> charterPlaces = new HashSet<>();
+
 
 
 }

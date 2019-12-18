@@ -3,6 +3,7 @@ package pl.miroslawbrz.czarteruj.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
+import pl.miroslawbrz.czarteruj.model.User;
 import pl.miroslawbrz.czarteruj.repository.CharterPlaceRepository;
 
 import java.util.List;
@@ -32,4 +33,15 @@ public class CharterPlaceService {
         charterPlacefromDB.setMapLatitude(charterPlace.getMapLatitude());
         charterPlacefromDB.setMapLongitude(charterPlace.getMapLongitude());
     }
+
+    public Long saveCharterPlaceAndGetId(CharterPlace charterPlace){
+        return charterPlaceRepository.save(charterPlace).getId();
+
+    }
+
+    public void updateUsersCharterPlaces(Long userId, Long charterPlaceId){
+        charterPlaceRepository.addCharterPlaceToUser(userId, charterPlaceId);
+    }
+
+
 }

@@ -1,9 +1,6 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
 import pl.miroslawbrz.czarteruj.model.Address;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
-import pl.miroslawbrz.czarteruj.service.GeoCoderApi;
-import pl.miroslawbrz.czarteruj.service.JsonParse;
+import pl.miroslawbrz.czarteruj.utils.JsonParse;
 
 public class main {
 
