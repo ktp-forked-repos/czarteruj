@@ -1,5 +1,7 @@
+import org.springframework.beans.factory.annotation.Autowired;
 import pl.miroslawbrz.czarteruj.model.Address;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
+import pl.miroslawbrz.czarteruj.service.CharterPlaceService;
 import pl.miroslawbrz.czarteruj.utils.JsonParse;
 
 public class main {
@@ -10,5 +12,7 @@ public class main {
         CharterPlace charterPlace = new CharterPlace();
         charterPlace.setAddress(address);
         jsonParse.setFullAddressAndCoordinatesFromApi(charterPlace);
+
+
     }
 }

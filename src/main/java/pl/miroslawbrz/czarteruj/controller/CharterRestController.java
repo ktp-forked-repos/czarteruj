@@ -11,7 +11,7 @@ import pl.miroslawbrz.czarteruj.service.CharterPlaceService;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/charters")
+@RequestMapping("/api/charters")
 public class CharterRestController {
 
     private CharterPlaceService charterPlaceService;

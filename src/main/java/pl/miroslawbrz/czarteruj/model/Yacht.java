@@ -12,7 +12,7 @@ public class Yacht {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String yachtModel;
     private Integer maxCapacity;
     private Double pricePerDay;

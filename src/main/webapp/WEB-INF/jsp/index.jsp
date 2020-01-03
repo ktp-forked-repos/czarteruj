@@ -36,8 +36,8 @@
 <div id="map">
 </div>
 </div>
-<script>
 
+<script>
 
     function initMap() {
 

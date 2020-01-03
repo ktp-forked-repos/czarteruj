@@ -24,6 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/addUser").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/image-resource").permitAll()
+                .antMatchers("/api/charters").permitAll()
                 .antMatchers("/charterAdminPanel").hasAnyRole("ADMIN", "CHARTERADMIN")
                 .anyRequest().authenticated()
                 .and().formLogin()
