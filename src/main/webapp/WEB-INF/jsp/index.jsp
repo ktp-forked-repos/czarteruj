@@ -38,9 +38,12 @@
 </div>
 <script>
 
+
     function initMap() {
 
         var center = {lat:52.068, lng: 19.475};
+
+
         var uluru = {lat: 52.150, lng: 21.000};
         var uluru2 = {lat: 52.000, lng: 21.500};
 
