@@ -40,7 +40,7 @@ public class YachtService{
     public Long saveYachtAndGetId(Yacht yacht) {
         return yachtRepository.save(yacht).getId();
     }
-    public void updateUsersCharterPlaces(Long charterPlaceId, Long yachtId){
+    public void updateYachtsInCharterPlace(Long charterPlaceId, Long yachtId){
         yachtRepository.addYachtToCharterPlace(charterPlaceId, yachtId);
     }
 
