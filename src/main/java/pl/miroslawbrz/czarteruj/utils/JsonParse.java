@@ -3,10 +3,12 @@ package pl.miroslawbrz.czarteruj.utils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import pl.miroslawbrz.czarteruj.model.Address;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
-import pl.miroslawbrz.czarteruj.utils.GeoCoderApi;
 
+@Component
 public class JsonParse {
 
 

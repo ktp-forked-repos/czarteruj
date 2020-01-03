@@ -16,15 +16,24 @@ import pl.miroslawbrz.czarteruj.utils.UserUtilities;
 @Controller
 public class CharterPlaceController {
 
-    @Autowired
     private UserService userService;
-    @Autowired
     private CharterPlaceService charterPlaceService;
+    private JsonParse jsonParse;
 
-    private JsonParse jsonParse = new JsonParse();
+    @Autowired
+    public CharterPlaceController(UserService userService, CharterPlaceService charterPlaceService, JsonParse jsonParse) {
+        this.userService = userService;
+        this.charterPlaceService = charterPlaceService;
+        this.jsonParse = jsonParse;
+    }
 
     @GetMapping("/CharterPlace")
     public String formCharterPlace(Model model){
+
+        if(!userService.isActivated()){
+            return "withoutActivationError";
+        }
+
         model.addAttribute("CharterPlace" , new CharterPlace());
         return "charterPlace";
     }
@@ -34,6 +43,10 @@ public class CharterPlaceController {
 
         String userEmail = UserUtilities.getLoggedUser();
         User user = userService.findUserByEmail(userEmail);
+
+        if(!user.isActive()){
+            return "withoutActivationError";
+        }
 
         charterPlace.setAddress(address);
         jsonParse.setFullAddressAndCoordinatesFromApi(charterPlace);
