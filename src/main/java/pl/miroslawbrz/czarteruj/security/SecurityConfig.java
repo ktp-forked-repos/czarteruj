@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/charterAdminPanel").hasAnyRole("ADMIN", "CHARTERADMIN")
                 .anyRequest().authenticated()
                 .and().formLogin()
+                .loginPage("/")
                 .and()
                 .csrf().disable();
     }

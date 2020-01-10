@@ -42,9 +42,9 @@ public class UserRegistrationController {
         if(bindingResult.hasErrors())
             return "registerForm";
         else {
+            user.setHash(hashCode());
             userService.addWithDefaultRole(user);
             Mail mail = new Mail();
-            user.setHash(user.hashCode());
             mail.sendEmail(user);
             return "registerSuccess";
         }
@@ -52,8 +52,7 @@ public class UserRegistrationController {
 
     @GetMapping("/activateUser/{hash}")
     public String activateUser(@PathVariable int hash){
-        User user = userService.findUserByHash(hash);
-        user.setActive(true);
+        userService.updateUserActivation(true, hash);
         return "index";
     }
 

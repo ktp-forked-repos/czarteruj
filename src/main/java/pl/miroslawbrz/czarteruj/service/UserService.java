@@ -31,10 +31,6 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    public User findUserByHash(int hash){
-        return userRepository.findByHash(hash);
-    }
-
     public void addWithDefaultRole(User user) {
         UserRole defaultRole = roleRepository.findByRole(DEFAULT_ROLE);
         user.getRoles().add(defaultRole);
@@ -47,6 +43,13 @@ public class UserService {
         return user.isActive();
     }
 
+    public void updateUserHash(int hash, String email){
+        userRepository.updateUserHash(hash, email);
+    }
+
+    public void updateUserActivation(boolean isActive, int hash){
+        userRepository.updateUserActivation(isActive, hash);
+    }
 
 
 

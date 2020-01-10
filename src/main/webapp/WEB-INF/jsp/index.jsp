@@ -17,8 +17,13 @@
     </div>
     <div id="login-header">
         <sec:authorize access="hasRole('ANONYMOUS')">
-            <a href="/login"><button class="login-button">zaloguj</button></a>
-            <a href="register"><button class="login-button">zarejestruj</button></a>
+            <a href="register"><button class="btn">zarejestruj</button></a>
+            <form id="loginForm" action="/login" method="POST">
+
+                <input type="text" name="email" id="email" placeholder="e-mail" />
+                <input type="password" name="password" id="password" placeholder="hasło" />
+                <input type="submit" class="btn" value="zaloguj"/>
+            </form>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
             <a href="/logout"><button class="login-button">wyloguj</button></a>

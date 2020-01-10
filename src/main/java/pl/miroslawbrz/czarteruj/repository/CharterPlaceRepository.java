@@ -12,4 +12,6 @@ public interface CharterPlaceRepository extends JpaRepository<CharterPlace, Long
     @Query(value = "INSERT INTO users_charter_places (user_id, charter_places_id) values (?1, ?2)", nativeQuery = true)
     void addCharterPlaceToUser(Long userId, Long CharterPlaceId);
 
+
+
 }

@@ -1,0 +1,14 @@
+.form{
+    float: left;
+    width: 50%;
+    background-color: lightskyblue;
+}
+#footer{
+    clear: both;
+}
+
+#container{
+    width: 1000px;
+    background-color: lightskyblue;
+    margin: auto;
+}

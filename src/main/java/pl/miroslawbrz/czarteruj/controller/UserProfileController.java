@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.miroslawbrz.czarteruj.model.CharterPlace;
 import pl.miroslawbrz.czarteruj.model.User;
-import pl.miroslawbrz.czarteruj.service.CharterPlaceService;
 import pl.miroslawbrz.czarteruj.service.UserService;
 import pl.miroslawbrz.czarteruj.utils.UserUtilities;
 
@@ -18,9 +17,8 @@ public class UserProfileController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private CharterPlaceService charterPlaceService;
-    List<CharterPlace> charterPlaceList = new ArrayList<>();
+
+    private List<CharterPlace> charterPlaceList = new ArrayList<>();
 
     @GetMapping(value = "/profile")
     public String showUserProfilePage(Model model){
